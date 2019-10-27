@@ -145,10 +145,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418775725}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -4, y: 2.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.748, y: 0.29360119, z: -1}
+  m_LocalScale: {x: 0.2515864, y: 0.2515864, z: 0.2515863}
   m_Children: []
-  m_Father: {fileID: 1087904917}
+  m_Father: {fileID: 1755950253}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &418775727
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0404419, y: 0.25376582}
+  m_Offset: {x: -1.5078743, y: 0.25376582}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -175,7 +175,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.9907236, y: 0.49246836}
+  m_Size: {x: 5.055859, y: 0.49246836}
   m_EdgeRadius: 0
 --- !u!1 &705507993
 GameObject:
@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 806632023}
   - component: {fileID: 806632026}
   - component: {fileID: 806632025}
+  - component: {fileID: 806632027}
   m_Layer: 0
   m_Name: Elf
   m_TagString: Untagged
@@ -344,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806632022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.19, y: -0.12, z: -1}
+  m_LocalPosition: {x: 2.23, y: -0.24, z: 0}
   m_LocalScale: {x: 2.256107, y: 2.256107, z: 2.256107}
   m_Children: []
   m_Father: {fileID: 0}
@@ -397,6 +398,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.71875, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &806632027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806632022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf44da2a11670af45a722c9652c0d6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sallyCube: {fileID: 1755950251}
+  litRingInside: {fileID: 21300000, guid: 80c687621dcfb6a48b0eaef5db92df25, type: 3}
+  unlitRingInside: {fileID: 21300000, guid: 5bd07545e37fdf34e944276bc7241ca5, type: 3}
+  litRingOutside: {fileID: 21300000, guid: 405bbeee8e5bc4b40b33b749db519dd7, type: 3}
+  unlitRingOutside: {fileID: 21300000, guid: 7711bcaf9b7ce8d4682ba5f9393dfe39, type: 3}
 --- !u!1 &869881874
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +426,7 @@ GameObject:
   - component: {fileID: 869881876}
   - component: {fileID: 869881875}
   m_Layer: 0
-  m_Name: New Sprite (1)
+  m_Name: Speech Bubble Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,10 +604,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1412268956}
-  - {fileID: 1620614577}
-  - {fileID: 418775726}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -697,11 +712,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412268955}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.73, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.15522873, y: -0.733, z: -1}
+  m_LocalScale: {x: 0.2515863, y: 0.2515863, z: 0.2515863}
   m_Children: []
-  m_Father: {fileID: 1087904917}
+  m_Father: {fileID: 1755950253}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1412268957
@@ -717,7 +732,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2199297, y: 0.25376582}
+  m_Offset: {x: -0.29232538, y: 0.18440294}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -728,7 +743,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.511467, y: 0.49246836}
+  m_Size: {x: 7.4869566, y: 0.3537426}
   m_EdgeRadius: 0
 --- !u!1 &1620614576
 GameObject:
@@ -754,11 +769,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620614576}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4, y: 2.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.876, y: 0.29360119, z: -1}
+  m_LocalScale: {x: 0.2515864, y: 0.2515864, z: 0.2515863}
   m_Children: []
-  m_Father: {fileID: 1087904917}
+  m_Father: {fileID: 1755950253}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1620614578
@@ -774,7 +789,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0404419, y: 0.25376582}
+  m_Offset: {x: -1.4950678, y: 0.25376582}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -785,7 +800,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.9907236, y: 0.49246836}
+  m_Size: {x: 5.081472, y: 0.49246836}
   m_EdgeRadius: 0
 --- !u!1 &1755950251
 GameObject:
@@ -797,8 +812,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1755950253}
   - component: {fileID: 1755950252}
+  - component: {fileID: 1755950254}
+  - component: {fileID: 1755950255}
   m_Layer: 0
-  m_Name: inside
+  m_Name: SmartSally
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,12 +878,57 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755950251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.617, y: 1.103, z: 0}
+  m_LocalPosition: {x: -0.617, y: 1.103, z: 1}
   m_LocalScale: {x: 3.9747796, y: 3.9747796, z: 3.9747796}
-  m_Children: []
+  m_Children:
+  - {fileID: 1412268956}
+  - {fileID: 1620614577}
+  - {fileID: 418775726}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1755950254
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755950251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.29997852, y: -0.26606095}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.84375, y: 1.46875}
+    newSize: {x: 0.59, y: 0.47}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.43715292, y: 0.36447257}
+  m_EdgeRadius: 0
+--- !u!114 &1755950255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755950251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc00a306bf2e714abd0f2e8d427a0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  litRingInside: {fileID: 21300000, guid: 80c687621dcfb6a48b0eaef5db92df25, type: 3}
+  unlitRingInside: {fileID: 21300000, guid: 5bd07545e37fdf34e944276bc7241ca5, type: 3}
+  litRingOutside: {fileID: 21300000, guid: 405bbeee8e5bc4b40b33b749db519dd7, type: 3}
+  unlitRingOutside: {fileID: 21300000, guid: 7711bcaf9b7ce8d4682ba5f9393dfe39, type: 3}
 --- !u!1 &2145624070
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +940,7 @@ GameObject:
   - component: {fileID: 2145624072}
   - component: {fileID: 2145624071}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Speech Bubble Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
