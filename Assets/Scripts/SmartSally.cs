@@ -6,6 +6,8 @@ public class SmartSally : MonoBehaviour
 {
     bool ringIsLit;
 
+    [SerializeField] GameObject smartSally;
+
     [SerializeField] Sprite litRingInside;
     [SerializeField] Sprite unlitRingInside;
 
@@ -18,7 +20,7 @@ public class SmartSally : MonoBehaviour
     {
         ringIsLit = false;
 
-        cubeRenderer = GetComponent<SpriteRenderer>();
+        cubeRenderer = smartSally.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -29,15 +31,21 @@ public class SmartSally : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetButtonDown("Fire1"))
+        Debug.Log(collision.name);
+
+        if (collision.name == "Elf")
         {
-            if (ringIsLit)
+            if (Input.GetButtonDown("Fire1"))
             {
-                StopListening();
-            }
-            else
-            {
-                Listen();
+                Debug.Log(collision.name + " clicked");
+                if (ringIsLit)
+                {
+                    StopListening();
+                }
+                else
+                {
+                    Listen();
+                }
             }
         }
     }

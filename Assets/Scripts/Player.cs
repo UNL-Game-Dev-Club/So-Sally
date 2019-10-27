@@ -7,17 +7,6 @@ public class Player : MonoBehaviour
     Rigidbody2D thisRigidbody;
     const float speed = 0.1f;
 
-    bool ringIsLit;
-
-    [SerializeField] GameObject sallyCube;
-    SpriteRenderer cubeRenderer;
-
-    [SerializeField] Sprite litRingInside;
-    [SerializeField] Sprite unlitRingInside;
-
-    [SerializeField] Sprite litRingOutside;
-    [SerializeField] Sprite unlitRingOutside;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +16,6 @@ public class Player : MonoBehaviour
         {
             thisRigidbody = this.gameObject.AddComponent<Rigidbody2D>();
         }
-
-        ringIsLit = false;
-        cubeRenderer = sallyCube.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -40,29 +26,5 @@ public class Player : MonoBehaviour
         {
             thisRigidbody.transform.Translate(Vector2.right * horizontal * speed);
         }
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (ringIsLit)
-            {
-                StopListening();
-            }
-            else
-            {
-                Listen();
-            }
-        }
-    }
-
-    void Listen()
-    {
-        ringIsLit = true;
-        cubeRenderer.sprite = litRingInside;
-    }
-
-    void StopListening()
-    {
-        ringIsLit = false;
-        cubeRenderer.sprite = unlitRingInside;
     }
 }
