@@ -16,6 +16,8 @@
 
 "So, what do you think?"
 
+"So Sally, what's the weather?"
+
 "I don't know about that."
 
 "If you go with me, I'll stop using your mascara!"
@@ -42,6 +44,8 @@
 
 "Sure, I'm all ears."
 
+"So Sally, when's the pizza arriving?"
+
 "Okay, so I heard my neighbors are eloping to Spain!"
 
 "Woah! Really?"
@@ -49,6 +53,8 @@
 "Don't tell anyone I told you, or they'll kill me if they find out!"
 
 "You can count on me."
+
+"So Sally, tell me a story."
 
 "So, did you hear the news?"
 
