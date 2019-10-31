@@ -5,16 +5,21 @@ L Okay, that's great! I'm good.
 L So Sally, what is my commute time to work?
 S Your commute looks good. It will take you 7 minutes.
 
-L Do you want fries with that?
+R When are the burgers going to be ready?
+L They're ready now!
+L Do you want fries with your burger?
 R No thanks, I'm good.
 
-L What did you say?
-R So, I'm planning this wonderful vaction next month.
-L Oh now that sounds wonderful!
-R You should come!
+L So, I'm planning this wonderful vaction next month.
+L I've decided to go on an adventure.
+R What did you say?
+L I'm planning a vaction next month.
 L I've decided to go on an adventure.
 R Where are you going?
 L To the Great Beyond. So, what do you think?
+R Oh now that sounds wonderful!
+L You should come!
+R Sure, I'd love to!
 
 L So Sally, what's the weather?
 S It's suuuuuunny and seventy fiiiiiiiive!
@@ -44,7 +49,9 @@ L So Sally, tell me a joke.
 S Knock, knock. Who's there? Me. Who else?
 
 L So Sally, tell me a story.
-S Once upon a time there was a 
+S Once upon a time there was a princess.
+S She lived happily ever after.
+S The end.
 
 L So, did you hear the news?
 R What news?
