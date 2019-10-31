@@ -56,7 +56,8 @@ public class SmartSally : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         string[] parts = scriptedText.text.Split('\n');
-        int randomSide = -1;
+        // int randomSide = -1;
+        bool side = false;
 
         foreach (string line in parts)
         {
@@ -65,8 +66,8 @@ public class SmartSally : MonoBehaviour
 
             leftText.text = "";
             rightText.text = "";
-            randomSide = Random.Range(0, 2);
-            if (randomSide == 0)
+            
+            if (side)
             {
                 leftText.text = line;
             }
@@ -80,6 +81,8 @@ public class SmartSally : MonoBehaviour
 
             penalize = true;
             yield return new WaitForSeconds(3.5f);
+
+            side = !side;
         }
     }
 
