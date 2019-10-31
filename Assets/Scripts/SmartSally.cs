@@ -30,6 +30,8 @@ public class SmartSally : MonoBehaviour
 
     bool penalize;
 
+    bool sallyIsSpeaking;
+
     [SerializeField] TextAsset scriptedText;
 
     // Start is called before the first frame update
@@ -45,6 +47,7 @@ public class SmartSally : MonoBehaviour
         Debug.Log(scriptedText.text);
 
         pointsText.text = "Points: 0";
+        sallyIsSpeaking = false;
     }
 
     // Update is called once per frame
@@ -79,7 +82,9 @@ public class SmartSally : MonoBehaviour
 
             if (line[0] == 'S')
             {
+                yield return new WaitForSeconds(1.5f);
                 ShowSpeechBubbles(displayText, false, false, true);
+                LightUpRing(true);
             }
             else
             {
@@ -96,8 +101,15 @@ public class SmartSally : MonoBehaviour
             penalize = false;
             yield return new WaitForSeconds(1.5f);
 
-            penalize = true;
+            if (!sallyIsSpeaking)
+                penalize = true;
             yield return new WaitForSeconds(3.5f);
+
+            if (sallyIsSpeaking)
+            {
+                sallyIsSpeaking = false;
+                StopListening();
+            }
         }
     }
 
@@ -130,6 +142,7 @@ public class SmartSally : MonoBehaviour
         {
             sallyText.text = displayText;
             speechBubbleSally.SetActive(true);
+            sallyIsSpeaking = true;
         }
     }
 
@@ -213,12 +226,25 @@ public class SmartSally : MonoBehaviour
     void Listen()
     {
         isRecording = true;
-        cubeRenderer.sprite = litRingInside;
+        LightUpRing(true);
     }
 
     void StopListening()
     {
         isRecording = false;
-        cubeRenderer.sprite = unlitRingInside;
+        if (!sallyIsSpeaking)
+            LightUpRing(false);
+    }
+
+    void LightUpRing(bool tf)
+    {
+        if (tf)
+        {
+            cubeRenderer.sprite = litRingInside;
+        }
+        else
+        {
+            cubeRenderer.sprite = unlitRingInside;
+        }
     }
 }
