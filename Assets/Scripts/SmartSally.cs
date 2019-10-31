@@ -73,6 +73,7 @@ public class SmartSally : MonoBehaviour
 
             if (string.IsNullOrEmpty(line))
             {
+                ShowSpeechBubbles("", false, false, false);
                 yield return new WaitForSeconds(3f);
 
                 continue;
