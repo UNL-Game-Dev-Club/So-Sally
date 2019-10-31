@@ -18,7 +18,13 @@ public class SmartSally : MonoBehaviour
 
     [SerializeField] Text leftText;
     [SerializeField] Text rightText;
+    [SerializeField] Text sallyText;
     [SerializeField] Text pointsText;
+
+    [SerializeField] GameObject speechBubbleLeft;
+    [SerializeField] GameObject speechBubbleRight;
+    [SerializeField] GameObject speechBubbleSally;
+
     int score;
     bool scoreChanged;
 
@@ -49,31 +55,33 @@ public class SmartSally : MonoBehaviour
 
     IEnumerator ManageText()
     {
-        leftText.text = "";
-        rightText.text = "";
+        ShowSpeechBubbles("", false, false, false);
 
         // Wait 5 seconds to start
         yield return new WaitForSeconds(5);
 
         string[] parts = scriptedText.text.Split('\n');
         // int randomSide = -1;
-        bool side = false;
+        bool side = true;
 
         foreach (string line in parts)
         {
-            if (string.IsNullOrEmpty(line))
-                continue;
+            ShowSpeechBubbles("", false, false, false);
 
-            leftText.text = "";
-            rightText.text = "";
+            if (string.IsNullOrEmpty(line))
+            {
+                yield return new WaitForSeconds(3f);
+
+                continue;
+            }
             
             if (side)
             {
-                leftText.text = line;
+                ShowSpeechBubbles(line, true, false, false);
             }
             else
             {
-                rightText.text = line;
+                ShowSpeechBubbles(line, false, true, false);
             }
 
             penalize = false;
@@ -83,6 +91,38 @@ public class SmartSally : MonoBehaviour
             yield return new WaitForSeconds(3.5f);
 
             side = !side;
+        }
+    }
+
+    void ShowSpeechBubbles(string displayText, bool left, bool right)
+    {
+        ShowSpeechBubbles(displayText, left, right, false);
+    }
+
+    void ShowSpeechBubbles(string displayText, bool left, bool right, bool sally)
+    {
+        leftText.text = "";
+        rightText.text = "";
+        sallyText.text = "";
+
+        speechBubbleLeft.SetActive(false);
+        speechBubbleRight.SetActive(false);
+        speechBubbleSally.SetActive(false);
+
+        if (left)
+        {
+            leftText.text = displayText;
+            speechBubbleLeft.SetActive(true);
+        }
+        else if (right)
+        {
+            rightText.text = displayText;
+            speechBubbleRight.SetActive(true);
+        }
+        else if (sally)
+        {
+            sallyText.text = displayText;
+            speechBubbleSally.SetActive(true);
         }
     }
 
@@ -144,7 +184,7 @@ public class SmartSally : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
+        // Debug.Log(collision.name);
 
         if (collision.name == "Elf")
         {
