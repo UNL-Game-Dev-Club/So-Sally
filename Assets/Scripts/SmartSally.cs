@@ -62,7 +62,7 @@ public class SmartSally : MonoBehaviour
 
         string[] parts = scriptedText.text.Split('\n');
         // int randomSide = -1;
-        bool side = true;
+        string displayText = "";
 
         foreach (string line in parts)
         {
@@ -74,14 +74,23 @@ public class SmartSally : MonoBehaviour
 
                 continue;
             }
-            
-            if (side)
+
+            displayText = line.Substring(1).Trim();
+
+            if (line[0] == 'S')
             {
-                ShowSpeechBubbles(line, true, false, false);
+                ShowSpeechBubbles(displayText, false, false, true);
             }
             else
             {
-                ShowSpeechBubbles(line, false, true, false);
+                if (line[0] == 'L')
+                {
+                    ShowSpeechBubbles(displayText, true, false, false);
+                }
+                else
+                {
+                    ShowSpeechBubbles(displayText, false, true, false);
+                }
             }
 
             penalize = false;
@@ -89,8 +98,6 @@ public class SmartSally : MonoBehaviour
 
             penalize = true;
             yield return new WaitForSeconds(3.5f);
-
-            side = !side;
         }
     }
 
