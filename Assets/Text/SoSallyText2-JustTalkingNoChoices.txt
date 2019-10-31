@@ -1,54 +1,55 @@
-Hi, how are you?
-I'm doing well, how are you?
-Okay, that's great! I'm good.
+L Hi, how are you?
+R I'm doing well, how are you?
+L Okay, that's great! I'm good.
 
-So Sally, what is my commute time to work?
-Your commute looks good. It will take you 7 minutes.
-Do you want fries with that?
-No thanks, I'm good.
+L So Sally, what is my commute time to work?
+S Your commute looks good. It will take you 7 minutes.
 
-What did you say?
-So, I'm planning this wonderful vaction next month.
-Oh now that sounds wonderful!
-You should come!
-I've decided to go on an adventure.
-Where are you going?
-To the Great Beyond. So, what do you think?
+L Do you want fries with that?
+R No thanks, I'm good.
 
-So Sally, what's the weather?
-I don't know about that.
+L What did you say?
+R So, I'm planning this wonderful vaction next month.
+L Oh now that sounds wonderful!
+R You should come!
+L I've decided to go on an adventure.
+R Where are you going?
+L To the Great Beyond. So, what do you think?
 
-If you go with me, I'll stop using your mascara!
-Why are you using my mascara! I'm gonna kill you!
-You need to calm down. It's just mascara.
-Nope. You're first on the list.
-You're gonna regret your life choices.
+L So Sally, what's the weather?
+S I don't know about that.
 
-Seriously, though?
-No way!
-What's up?
-Can I tell you a secret?
-Sure, I'm all ears.
+L If you go with me, I'll stop using your mascara!
+R Why are you using my mascara! I'm gonna kill you!
+L You need to calm down. It's just mascara.
+R Nope. You're first on the list.
+L You're gonna regret your life choices.
 
-So Sally, when's the pizza arriving?
-I want pizza!
-Your pizza will arrive in 7 minutes.
+L Seriously, though?
+R No way!
+L What's up?
+R Can I tell you a secret?
+L Sure, I'm all ears.
 
-So I heard my neighbors are eloping to Spain!
-Woah! Really?
-Don't tell anyone I told you!
-You can count on me.
+L So Sally, when's the pizza arriving?
+R I want pizza!
+S Your pizza will arrive in 7 minutes.
 
-So Sally, tell me a joke.
-Knock, knock. Who's there? Me. Who else?
+L So I heard my neighbors are eloping to Spain!
+R Woah! Really?
+L Don't tell anyone I told you!
+R You can count on me.
 
-So Sally, tell me a story.
-Once upon a time there was a 
+L So Sally, tell me a joke.
+S Knock, knock. Who's there? Me. Who else?
 
-So, did you hear the news?
-What news?
-My ex is going to be on this new TV show!
-I can't stand him!
-Me neither!
-Don't tell anybody! Please??
-Yeah, no problem.
+L So Sally, tell me a story.
+S Once upon a time there was a 
+
+L So, did you hear the news?
+R What news?
+L My ex is going to be on this new TV show!
+R I can't stand him!
+L Me neither!
+R Don't tell anybody! Please??
+L Yeah, no problem.
