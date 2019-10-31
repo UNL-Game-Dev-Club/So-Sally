@@ -1,5 +1,8 @@
 Instructions:
 Record when you see the phrase "So Sally..." until the text stops.
+Do not record when you do not see the phrase "So Sally...".
+
+
 Choose the appropriate response.
 Decide whether or not to report the phrase to Sally Squared, Inc. and/or 911 for further interrogation.
 
