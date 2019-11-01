@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SmartSally : MonoBehaviour
@@ -25,6 +26,14 @@ public class SmartSally : MonoBehaviour
     [SerializeField] GameObject speechBubbleRight;
     [SerializeField] GameObject speechBubbleSally;
 
+    [SerializeField] TextAsset goodEndingText;
+    [SerializeField] TextAsset goodEndingTextOverlay;
+    [SerializeField] TextAsset badEndingText;
+    [SerializeField] TextAsset badEndingTextOverlay;
+
+    [SerializeField] Canvas overlayCanvas;
+    [SerializeField] Text overlayCanvasEndingText;
+
     int score;
     bool scoreChanged;
 
@@ -36,6 +45,8 @@ public class SmartSally : MonoBehaviour
 
     const string ERROR_RESPONSE = "Why isn't this thing working?";
     bool didRecord;
+
+    bool playAgainTime = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,47 +64,60 @@ public class SmartSally : MonoBehaviour
         sallyIsSpeaking = false;
 
         didRecord = false;
+
+        overlayCanvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!playAgainTime)
+            return;
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     IEnumerator ManageText()
     {
+        string displayText = "";
+        bool previousSideWasLeft = true;
+        bool isLeft = false;
+
+        string line = "";
+        string prevLine = "";
+        char indicator = '?';
+
         ShowSpeechBubbles("", false, false, false);
 
         // Wait 5 seconds to start
         yield return new WaitForSeconds(5);
 
         string[] parts = scriptedText.text.Split('\n');
-        // int randomSide = -1;
-        string displayText = "";
-        bool previousSideWasLeft = true;
-
-        foreach (string line in parts)
+        for (int i = 0; i < parts.Length; i++)
         {
-            Debug.Log("Line: " + line);
+            line = parts[i];
 
             penalize = false;
 
             ShowSpeechBubbles("", false, false, false);
 
-            if (string.IsNullOrEmpty(line.Trim()))
+            if (isPause(line.Trim()))
             {
-                ShowSpeechBubbles("", false, false, false);
                 yield return new WaitForSeconds(3f);
-
                 continue;
             }
+            indicator = line[0];
 
             displayText = line.Substring(1).Trim();
 
-            if (line[0] == 'S')
+            Debug.Log("Indicator: " + indicator + ", Line: " + displayText);
+
+            if (indicator == 'S')
             {
-                if (didRecord)
+                /* if (didRecord)
                 {
                     yield return new WaitForSeconds(1.5f);
                     ShowSpeechBubbles(displayText, false, false, true);
@@ -104,19 +128,35 @@ public class SmartSally : MonoBehaviour
                     yield return new WaitForSeconds(3);
                     ShowSpeechBubbles(ERROR_RESPONSE, previousSideWasLeft, !previousSideWasLeft, false);
                 }
-            }
-            else
-            {
-                if (line[0] == 'L')
+
+                if (isPause(parts[i + 1]))
                 {
-                    ShowSpeechBubbles(displayText, true, false, false);
-                    previousSideWasLeft = true;
+                    didRecord = false;
                 }
                 else
                 {
-                    ShowSpeechBubbles(displayText, false, true, false);
-                    previousSideWasLeft = false;
+                    if (parts[i + 1][0] != 'S')
+                    {
+                        didRecord = false;
+                    }
                 }
+                */
+
+                yield return new WaitForSeconds(1.5f);
+                ShowSpeechBubbles(displayText, false, false, true);
+                LightUpRing(true);
+
+                /* if (!didRecord)
+                {
+                    yield return new WaitForSeconds(3);
+                    ShowSpeechBubbles(ERROR_RESPONSE, previousSideWasLeft, !previousSideWasLeft, false);
+                } */
+            }
+            else
+            {
+                isLeft = line[0] == 'L';
+                ShowSpeechBubbles(displayText, isLeft, !isLeft);
+                previousSideWasLeft = isLeft;
             }
 
             yield return new WaitForSeconds(1.5f);
@@ -130,6 +170,48 @@ public class SmartSally : MonoBehaviour
                 sallyIsSpeaking = false;
                 StopListening();
             }
+        }
+
+        string overlayText = "";
+        // if (score > 20)
+        if (score > 0)
+        {
+            // Good Ending
+            parts = goodEndingText.text.Split('\n');
+            overlayText = goodEndingTextOverlay.text;
+        }
+        else
+        {
+            // Bad ending
+            parts = badEndingText.text.Split('\n');
+            overlayText = badEndingTextOverlay.text;
+        }
+
+        displayText = "";
+        isLeft = false;
+        foreach (string thisLine in parts)
+        {
+            displayText = thisLine.Substring(1);
+            isLeft = thisLine[0] == 'L';
+            ShowSpeechBubbles(displayText, isLeft, !isLeft);
+
+            yield return new WaitForSeconds(5);
+        }
+
+        overlayCanvas.gameObject.SetActive(true);
+        overlayCanvasEndingText.text = overlayText;
+    }
+
+    bool isPause(string line)
+    {
+        if (string.IsNullOrEmpty(line.Trim()))
+        {
+            ShowSpeechBubbles("", false, false, false);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -172,12 +254,7 @@ public class SmartSally : MonoBehaviour
         {
             if (isRecording)
             {
-                if (leftText.text.Contains("So Sally"))
-                {
-                    score++;
-                    didRecord = true;
-                }
-                else if (rightText.text.Contains("So Sally"))
+                if (leftText.text.Contains("So Sally") || rightText.text.Contains("So Sally"))
                 {
                     score++;
                     didRecord = true;
@@ -192,7 +269,6 @@ public class SmartSally : MonoBehaviour
             }
             else
             {
-                didRecord = false;
                 if (leftText.text.Contains("So Sally"))
                 {
                     if (penalize)
@@ -221,6 +297,14 @@ public class SmartSally : MonoBehaviour
                 scoreChanged = false;
             }
 
+            if (score < 0)
+            {
+                pointsText.color = Color.red;
+            }
+            else
+            {
+                pointsText.color = Color.black;
+            }
             yield return new WaitForSeconds(0.2f);
         }
     }
