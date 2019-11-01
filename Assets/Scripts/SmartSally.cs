@@ -69,6 +69,8 @@ public class SmartSally : MonoBehaviour
 
         foreach (string line in parts)
         {
+            penalize = false;
+
             ShowSpeechBubbles("", false, false, false);
 
             if (string.IsNullOrEmpty(line))
@@ -99,7 +101,6 @@ public class SmartSally : MonoBehaviour
                 }
             }
 
-            penalize = false;
             yield return new WaitForSeconds(1.5f);
 
             if (!sallyIsSpeaking)
