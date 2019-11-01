@@ -64,8 +64,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f3536f04fd1092e40970b5b32609358f, type: 3}
-    m_FontSize: 45
+    m_Font: {fileID: 12800000, guid: 2671468478661ce4eb9ebf251b05a4f2, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -143,11 +143,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f3536f04fd1092e40970b5b32609358f, type: 3}
-    m_FontSize: 53
+    m_Font: {fileID: 12800000, guid: f5b395e696f5f3544a638e08243d2a8c, type: 3}
+    m_FontSize: 36
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 0
     m_MaxSize: 60
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 4073609967969173086}
   - component: {fileID: 4073609967969173085}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Text Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
