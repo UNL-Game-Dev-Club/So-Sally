@@ -1,0 +1,62 @@
+L Hi, how are you?
+R I'm doing well, how are you?
+L Okay, that's great! I'm good.
+
+L So Sally, what is my commute time to work?
+S Your commute looks good. It will take you 7 minutes.
+
+R When are the burgers going to be ready?
+L They're ready now!
+L Do you want fries with your burger?
+R No thanks, I'm good.
+
+L So, I'm planning this wonderful vaction next month.
+L I've decided to go on an adventure.
+R What did you say?
+L I'm planning a vaction next month.
+L I've decided to go on an adventure.
+R Where are you going?
+L To the Great Beyond. So, what do you think?
+R Oh now that sounds wonderful!
+L You should come!
+R Sure, I'd love to!
+
+L So Sally, what's the weather?
+S It's suuuuuunny and seventy fiiiiiiiive!
+
+L If you go with me, I'll stop using your mascara!
+R Why are you using my mascara! I'm gonna kill you!
+L You need to calm down. It's just mascara.
+R Nope. You're first on the list.
+L You're gonna regret your life choices.
+
+L Seriously, though?
+R No way!
+L What's up?
+R Can I tell you a secret?
+L Sure, I'm all ears.
+
+L So Sally, when's the pizza arriving?
+R I want pizza!
+S Your pizza will arrive in 7 minutes.
+
+L So I heard my neighbors are eloping to Spain!
+R Woah! Really?
+L Don't tell anyone I told you!
+R You can count on me.
+
+L So Sally, tell me a joke.
+S Knock, knock. Who's there? Me. Who else?
+
+L So Sally, tell me a story.
+S Once upon a time there was a princess.
+S She lived happily ever after.
+S The end.
+
+L So, did you hear the news?
+R What news?
+L My ex is going to be on this new TV show!
+R I can't stand him!
+L Me neither!
+R Don't tell anybody! Please??
+L Yeah, no problem.
