@@ -44,7 +44,7 @@ public class SmartSally : MonoBehaviour
         StartCoroutine(WatchForPoints());
         StartCoroutine(ManageText());
 
-        Debug.Log(scriptedText.text);
+        // Debug.Log(scriptedText.text);
 
         pointsText.text = "Points: 0";
         sallyIsSpeaking = false;
@@ -69,11 +69,13 @@ public class SmartSally : MonoBehaviour
 
         foreach (string line in parts)
         {
+            Debug.Log("Line: " + line);
+
             penalize = false;
 
             ShowSpeechBubbles("", false, false, false);
 
-            if (string.IsNullOrEmpty(line))
+            if (string.IsNullOrEmpty(line.Trim()))
             {
                 ShowSpeechBubbles("", false, false, false);
                 yield return new WaitForSeconds(3f);
