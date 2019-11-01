@@ -1,0 +1,5 @@
+L This Smart Sally is getting unplugged right now!
+L It keeps recording my private conversations!!
+
+Overlay:
+YOU FAILED! :( Try again?
