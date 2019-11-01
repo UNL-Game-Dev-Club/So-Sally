@@ -34,6 +34,9 @@ public class SmartSally : MonoBehaviour
 
     [SerializeField] TextAsset scriptedText;
 
+    const string ERROR_RESPONSE = "Why isn't this thing working?";
+    bool didRecord;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +51,8 @@ public class SmartSally : MonoBehaviour
 
         pointsText.text = "Points: 0";
         sallyIsSpeaking = false;
+
+        didRecord = false;
     }
 
     // Update is called once per frame
@@ -66,6 +71,7 @@ public class SmartSally : MonoBehaviour
         string[] parts = scriptedText.text.Split('\n');
         // int randomSide = -1;
         string displayText = "";
+        bool previousSideWasLeft = true;
 
         foreach (string line in parts)
         {
@@ -87,19 +93,29 @@ public class SmartSally : MonoBehaviour
 
             if (line[0] == 'S')
             {
-                yield return new WaitForSeconds(1.5f);
-                ShowSpeechBubbles(displayText, false, false, true);
-                LightUpRing(true);
+                if (didRecord)
+                {
+                    yield return new WaitForSeconds(1.5f);
+                    ShowSpeechBubbles(displayText, false, false, true);
+                    LightUpRing(true);
+                }
+                else
+                {
+                    yield return new WaitForSeconds(3);
+                    ShowSpeechBubbles(ERROR_RESPONSE, previousSideWasLeft, !previousSideWasLeft, false);
+                }
             }
             else
             {
                 if (line[0] == 'L')
                 {
                     ShowSpeechBubbles(displayText, true, false, false);
+                    previousSideWasLeft = true;
                 }
                 else
                 {
                     ShowSpeechBubbles(displayText, false, true, false);
+                    previousSideWasLeft = false;
                 }
             }
 
@@ -159,10 +175,12 @@ public class SmartSally : MonoBehaviour
                 if (leftText.text.Contains("So Sally"))
                 {
                     score++;
+                    didRecord = true;
                 }
                 else if (rightText.text.Contains("So Sally"))
                 {
                     score++;
+                    didRecord = true;
                 }
                 else
                 {
@@ -174,6 +192,7 @@ public class SmartSally : MonoBehaviour
             }
             else
             {
+                didRecord = false;
                 if (leftText.text.Contains("So Sally"))
                 {
                     if (penalize)
