@@ -35,6 +35,7 @@ public class SmartSally : MonoBehaviour
     [SerializeField] Text overlayCanvasEndingText;
 
     int score;
+    const int GOAL = 30;
     bool scoreChanged;
 
     bool penalize;
@@ -47,6 +48,8 @@ public class SmartSally : MonoBehaviour
     bool didRecord;
 
     bool playAgainTime = false;
+
+    bool newText = true;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +102,7 @@ public class SmartSally : MonoBehaviour
         for (int i = 0; i < parts.Length; i++)
         {
             line = parts[i];
+            newText = true;
 
             penalize = false;
 
@@ -117,40 +121,17 @@ public class SmartSally : MonoBehaviour
 
             if (indicator == 'S')
             {
-                /* if (didRecord)
+                if (!didRecord)
+                {
+                    yield return new WaitForSeconds(3);
+                    ShowSpeechBubbles(ERROR_RESPONSE, previousSideWasLeft, !previousSideWasLeft, false);
+                }
+                else
                 {
                     yield return new WaitForSeconds(1.5f);
                     ShowSpeechBubbles(displayText, false, false, true);
                     LightUpRing(true);
                 }
-                else
-                {
-                    yield return new WaitForSeconds(3);
-                    ShowSpeechBubbles(ERROR_RESPONSE, previousSideWasLeft, !previousSideWasLeft, false);
-                }
-
-                if (isPause(parts[i + 1]))
-                {
-                    didRecord = false;
-                }
-                else
-                {
-                    if (parts[i + 1][0] != 'S')
-                    {
-                        didRecord = false;
-                    }
-                }
-                */
-
-                yield return new WaitForSeconds(1.5f);
-                ShowSpeechBubbles(displayText, false, false, true);
-                LightUpRing(true);
-
-                /* if (!didRecord)
-                {
-                    yield return new WaitForSeconds(3);
-                    ShowSpeechBubbles(ERROR_RESPONSE, previousSideWasLeft, !previousSideWasLeft, false);
-                } */
             }
             else
             {
@@ -173,8 +154,7 @@ public class SmartSally : MonoBehaviour
         }
 
         string overlayText = "";
-        // if (score > 20)
-        if (score > 0)
+        if (score >= GOAL)
         {
             // Good Ending
             parts = goodEndingText.text.Split('\n');
@@ -258,6 +238,8 @@ public class SmartSally : MonoBehaviour
                 {
                     score++;
                     didRecord = true;
+
+                    penalize = false;
                 }
                 else
                 {
@@ -269,21 +251,15 @@ public class SmartSally : MonoBehaviour
             }
             else
             {
-                if (leftText.text.Contains("So Sally"))
+                if (leftText.text.Contains("So Sally") || rightText.text.Contains("So Sally"))
                 {
                     if (penalize)
                     {
                         score--;
                         scoreChanged = true;
                     }
-                }
-                else if (rightText.text.Contains("So Sally"))
-                {
-                    if (penalize)
-                    {
-                        score--;
-                        scoreChanged = true;
-                    }
+
+                    didRecord = false;
                 }
                 else
                 {
@@ -301,11 +277,17 @@ public class SmartSally : MonoBehaviour
             {
                 pointsText.color = Color.red;
             }
+            else if (score >= GOAL)
+            {
+                pointsText.color = Color.green;
+            }
             else
             {
                 pointsText.color = Color.black;
             }
             yield return new WaitForSeconds(0.2f);
+
+            newText = false;
         }
     }
 
