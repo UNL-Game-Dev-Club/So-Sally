@@ -1,0 +1,13 @@
+You get to control your very own Sally Squared device!
+It is your responsibility to record only when prompted.
+
+Instructions:
+Record only when you see the phrase "So Sally..." until the text stops to get points.
+Do not record when you do not see the phrase "So Sally..." or you will lose points!
+
+Controls:
+Left arrow key or A to move left
+Right arrow key or D to move right
+Space key or click while on the Record button to start/stop recording
+
+Good luck!
