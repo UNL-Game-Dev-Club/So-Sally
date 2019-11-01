@@ -1,5 +1,2 @@
 R Hey, this Smart Sally is pretty cool!
 R I should totally get one for my cousin!
-
-Overlay:
-Congratulations! You have succeeded! :)

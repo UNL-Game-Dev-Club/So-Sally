@@ -37,8 +37,8 @@ R Can I tell you a secret?
 L Sure, I'm all ears.
 
 L So Sally, when's the pizza arriving?
-R I want pizza!
 S Your pizza will arrive in 7 minutes.
+R I want pizza!
 
 L So I heard my neighbors are eloping to Spain!
 R Woah! Really?
@@ -58,5 +58,5 @@ R What news?
 L My ex is going to be on this new TV show!
 R I can't stand him!
 L Me neither!
-R Don't tell anybody! Please??
-L Yeah, no problem.
+L Don't tell anybody! Please??
+R Yeah, no problem.
