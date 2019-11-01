@@ -1525,5 +1525,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4073609967316008841, guid: 553dba722d299a7489a2b55056c6c71d,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2671468478661ce4eb9ebf251b05a4f2,
+        type: 3}
+    - target: {fileID: 4073609967316008841, guid: 553dba722d299a7489a2b55056c6c71d,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 553dba722d299a7489a2b55056c6c71d, type: 3}

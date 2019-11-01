@@ -79,7 +79,7 @@ public class SmartSally : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -178,6 +178,7 @@ public class SmartSally : MonoBehaviour
             yield return new WaitForSeconds(5);
         }
 
+        playAgainTime = true; 
         overlayCanvas.gameObject.SetActive(true);
         overlayCanvasEndingText.text = overlayText;
     }
